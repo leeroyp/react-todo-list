@@ -24,6 +24,7 @@ getStyle = () => {
                   <input type="checkbox" onChange={this.props.markComplete.bind
                 (this, id)}/>{''}
                   {tittle}
+                  < button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
                   </p>  
             </div>
         )
@@ -31,9 +32,18 @@ getStyle = () => {
 }
         //PropTypes
   TodoItem.propTypes = {
-    todos: PropTypes.object.isRequired
+    todo: PropTypes.object.isRequired
 }  
 
+const btnStyle = {
+    background: '#ff0000',
+    color:'#fff',
+    border: 'none',
+    padding: '5px 7px',
+    borderRadius: '50%',
+    cursor: 'pointer',
+    float: 'right'
 
+}
 
 export default TodoItem
