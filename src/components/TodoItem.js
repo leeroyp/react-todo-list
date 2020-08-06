@@ -14,10 +14,17 @@ getStyle = () => {
     
 }
 
+
+
     render() {
+        const {id, tittle} = this.props.todo;
         return (
             <div style= {this.getStyle()}>
-              <p>{this.props.todo.tittle}</p>  
+              <p>
+                  <input type="checkbox" onChange={this.props.markComplete.bind
+                (this, id)}/>{''}
+                  {tittle}
+                  </p>  
             </div>
         )
     }
