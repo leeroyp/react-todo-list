@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function Header (){
-    return(
-        <Header>
-            <h1>TodoList</h1>
-        </Header>
+function Header() {
+    return (
+        <header>
+            <h3>Todo List</h3>
+        </header>
     )
 }
+
+export default Header
