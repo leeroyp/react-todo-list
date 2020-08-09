@@ -3,14 +3,14 @@ import Header from './components/layout/Header';
 
 
 import Todos from './components/Todos';
-import AddTodos from './components/AddTodos';
+import AddTodo from './components/AddTodo';
 
 
 
 import './App.css';
 
 class App extends Component {
-  state ={
+  state = {
     todos: [
       {
         id: 1,
@@ -29,30 +29,35 @@ class App extends Component {
       }
     ]
   }
-//Toggle Complete
-  markComplete = (id)=>{
-    this.setState({todos: this.state.todos.map(todo => {
-      if (todo.id === id){
-        todo.completed = !todo.completed
-      }
-      return todo;
-    })})
+  //Toggle Complete
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo;
+      })
+    })
     console.log("From app.js")
-}
+  }
 
-delTodo = (id) =>{
- this.setState({todos:[...this.state.todos.filter(todo=>todo.id!==id)]})
-}
+  delTodo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
+  }
 
-render(){
-  return (
-    <div className="App">
-      <Header />
-      <Todos todos={this.state.todos} markComplete={this.markComplete}
-      delTodo={this.delTodo} />
-    </div>
-  );
-}
+  render() {
+    return (
+      <div className="App">
+        <div className="container">
+          <Header />
+          <AddTodo />
+          <Todos todos={this.state.todos} markComplete={this.markComplete}
+            delTodo={this.delTodo} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
