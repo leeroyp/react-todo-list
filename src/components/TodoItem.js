@@ -17,13 +17,13 @@ getStyle = () => {
 
 
     render() {
-        const {id, tittle} = this.props.todo;
+        const {id, title} = this.props.todo;
         return (
             <div style= {this.getStyle()}>
               <p>
                   <input type="checkbox" onChange={this.props.markComplete.bind
                 (this, id)}/>{''}
-                  {tittle}
+                  {title}
                   < button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
                   </p>  
             </div>
