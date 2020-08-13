@@ -10,7 +10,7 @@ onChange = (e) => this.setState({ [e.target.name]:
 
     onSubmit = (e) => {
         e.preventDefaul();
-     this.props.AddTodo(this.state.tittle);
+     this.props.AddTodo(this.state.title);
      this.setState({title:''})
     }
 
@@ -19,7 +19,7 @@ onChange = (e) => this.setState({ [e.target.name]:
             <form onSubmit={this.onSubmit} style={{flex:'1'}}>
                 <input 
                     type="text"
-                    name="tittle"
+                    name="title"
                     style={{flex:'10', padding: '5px'}} 
                     placeholder="Add Todo ..." 
                     value={this.state.title} 
